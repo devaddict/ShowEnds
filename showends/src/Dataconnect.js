@@ -1,35 +1,22 @@
-const request = {
-  getShows: () => {
-    return [
-      {
-        Id: 1,
-        Name: "Game of thrones",
-        image: "https://i.ytimg.com/sh/ow8-ZftRoZelY710tvO45Q/market.jpg",
-        Description: "Some description"
-      },
-      {
-        Id: 2,
-        Name: "Ray Donovan",
-        image:
-          "https://m.media-amazon.com/images/M/MV5BNWMwMjUyYmMtODYyOS00YjYwLWE0NjQtMGJiYzVmOGVjOGQ0XkEyXkFqcGdeQXVyOTA3MTMyOTk@._V1_.jpg",
-        Description: "Some description"
-      },
-      {
-        Id: 3,
-        Name: "The Good Place",
-        image: "http://writingexercises.co.uk/random-images.php",
-        Description: "Some description"
-      },
-      {
-        Id: 4,
-        Name: "Baskets",
-        image: "http://writingexercises.co.uk/random-images.php",
-        Description: "Some description"
-      }
-    ];
-  }
-};
+import axios from "axios";
+// var getShows = funtion (usertoken){
+//   axios.get(`https://localhost:44314/api/${usertoken}/show/getshowlist`)
+//     .then(res => {
+//       const shows = res.data.result;
+//       console.log(shows);
+//       return "abc";
+//     });
+// };
 
-export default {
-  request
+export const getdata = usertoken =>
+  fetch(
+    `https://star-voteapi.azurewebsites.net/api/${usertoken}/show/getshowlist`
+  ).then(response => response.json());
+
+export var getShowList = async usertoken => {
+  await axios.get(
+    `https://star-voteapi.azurewebsites.net/api/${usertoken}/show/getshowlist`
+  );
+
+  //console.log(response.data);
 };

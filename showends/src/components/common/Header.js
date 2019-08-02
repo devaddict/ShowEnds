@@ -1,4 +1,5 @@
 import React from "react";
+import GoogleLogin from "./../oath/Google";
 import {
   Collapse,
   Navbar,
@@ -32,13 +33,15 @@ export default class Siteheader extends React.Component {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink href="/components/">Popular</NavLink>
+                <NavLink href="/Popular">Popular</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/components/">Last Season</NavLink>
+                <NavLink href="/">Last Season</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/components/">Favourites</NavLink>
+                <NavLink href="/components/">
+                  <GoogleLogin />
+                </NavLink>
               </NavItem>
             </Nav>
           </Collapse>

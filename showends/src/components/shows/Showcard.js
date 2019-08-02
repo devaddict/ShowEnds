@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 import React from "react";
 import { Col } from "reactstrap";
 
@@ -8,17 +9,25 @@ class Showcard extends React.Component {
   }
 
   render() {
-    var divStyle = { height: 150, width: 150 }; // rendered as "height:10px"
+    var imgStyle = { height: 150 }; // rendered as "height:10px"
     return (
-      <div>
-        {this.props.name}
-        <img
-          src={this.props.image}
-          alt="something"
-          style={divStyle}
-          className="img-thumbnail"
-        />
-      </div>
+      <Col>
+        <div className="card" style={{ width: "18rem" }}>
+          <img
+            style={imgStyle}
+            className="card-img-top"
+            src={this.props.image}
+            alt="Card  cap"
+          />
+          <div className="card-body">
+            <h5 className="card-title">{this.props.name}</h5>
+            <p className="card-text">{this.props.Desc}</p>
+            <a href="#1" className="btn btn-primary">
+              More>>
+            </a>
+          </div>
+        </div>
+      </Col>
     );
   }
 }

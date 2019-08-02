@@ -6,11 +6,23 @@ class Showlist extends React.Component {
     super(props);
     this.state = {};
   }
-  showCard = this.props.shows.map((item, key) => (
-    <Showcard key={item.Id} name={item.Name} image={item.image} />
-  ));
+
   render() {
-    return <Container>{this.showCard}</Container>;
+    console.log(this.props);
+    //console.log(this.props);
+    var showCard = this.props.shows.map((item, key) => (
+      <Showcard
+        key={item.Id}
+        Desc={item.Desc}
+        name={item.Name}
+        image={item.Image}
+      />
+    ));
+    return (
+      <Container>
+        <Row>{showCard}</Row>
+      </Container>
+    );
   }
 }
 

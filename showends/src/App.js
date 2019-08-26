@@ -8,8 +8,6 @@ import Personal from "./components/shows/Personal";
 import Popular from "./components/Popular";
 
 function App() {
-  //console.log(this.winows.location);
-
   return (
     <div>
       <Router>

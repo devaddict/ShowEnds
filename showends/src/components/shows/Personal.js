@@ -6,9 +6,7 @@ function Personal() {
   const [data, setShowList] = useState({ result: [] });
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios(
-        "https://star-voteapi.azurewebsites.net/api/1/show/getshows"
-      );
+      const result = await axios("https://localhost:44314/api/1/show/getshows");
       setShowList(result.data);
     };
     fetchData();

@@ -5,24 +5,22 @@ function GoogleLoginBtn() {
   const [data, setShowList] = useState({ result: {} });
 
   const responseGoogle = response => {
+    var googleObj = {};
     console.log(response);
     console.log(response.getAuthResponse().id_token);
     console.log(response.isSignedIn());
-    setShowList(response);
-    //GoogleLoginResponse();
-    // console.log(response.currentUser.get());
-
-    // const fetchData = async () => {
-    //   const result = await axios(
-    //     "https://www.googleapis.com/plus/v1/people/me?access_token=" +
-    //       response.getAuthResponse().id_token
-    //   );
-    //   //setShowList(result.data);
-    //   console.log(result.data);
-    // };
-    // fetchData();
+    console.log(response.profileObj);
+    const fetchData = async () => {
+      const result = await axios(
+        "https://www.googleapis.com/plus/v1/people/me?access_token=" +
+          response.getAuthResponse().id_token
+      );
+      //setShowList(result.data);
+      console.log(result.data);
+    };
+    fetchData();
   };
-
+  //https://www.googleapis.com/plus/v1/people/me?access_token=
   return (
     <GoogleLogin
       clientId="845088034066-pqcl8k4vdsu2stphn5itn54s83m8vdm9.apps.googleusercontent.com"
